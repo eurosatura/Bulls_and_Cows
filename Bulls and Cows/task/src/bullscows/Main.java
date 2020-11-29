@@ -4,13 +4,36 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int codeLength = scan.nextInt();
-        System.out.println(generateSecretCode(codeLength));
-    }
-    public static String generateSecretCode (int length) {
-        if (length > 10) {
-            return "Error";
+        //Ask for the length of the secret code.
+        System.out.println("Please, enter the secret code's length:");
+
+        int codeLength = 11;
+        while (codeLength > 10) {
+            codeLength = scan.nextInt();
+            if (codeLength > 10) {
+                System.out.println("Error: can't generate a secret number with a length of 11 because there aren't enough unique digits.");
+            }
         }
+
+        //and then generate the code.
+        String secretCode = generateSecretCode(codeLength);
+
+        System.out.println("Okay, let's start a game!");
+
+        int turn = 0;
+        boolean result = false;
+        while (!result) {
+            turn++;
+            System.out.println("Turn " + turn + ":");
+            result = play(secretCode);
+        }
+        System.out.println("Congratulations! You guessed the secret code.");
+
+
+    }
+
+    public static String generateSecretCode (int length) {
+
         StringBuilder code = new StringBuilder();
         while (code.length() < length) {
             StringBuilder pseudoRandomNumber = new StringBuilder(String.valueOf(System.nanoTime()));
@@ -46,31 +69,29 @@ public class Main {
     }
 
     // method with code from previous exercises
-    public static void previous () {
-        int[] secretCode = {1, 2, 3, 4};
-        String secretCodeStr = "";
-        for (int i = 0; i < secretCode.length; i++) {
-            secretCodeStr+=secretCode[i];
-        }
+    public static boolean play (String secretCode) {
+
         int bulls = 0;
         int cows = 0;
+
+        //Wait for the user input.
         Scanner scan = new Scanner(System.in);
         String userAnswerStr = scan.nextLine();
-        String[] userAnswerArr = userAnswerStr.split("");
-        int[] userAnswerInt = new int[userAnswerArr.length];
-        for (int i = 0; i < userAnswerArr.length; i++) {
-            userAnswerInt[i] = Integer.parseInt(userAnswerArr[i]);
-        }
-        for (int i = 0; i < secretCode.length; i++) {
-            if (secretCode[i] == userAnswerInt[i]) {
+
+        // calculating bulls quantity
+        for (int i = 0; i < secretCode.length(); i++) {
+            if (secretCode.charAt(i) == userAnswerStr.charAt(i)) {
                 bulls++;
             }
-            for (int j = 0; j < userAnswerInt.length; j++) {
-                if (secretCode[i] == userAnswerInt[j] && j != i) {
+            // and cows quantity
+            for (int j = 0; j < userAnswerStr.length(); j++) {
+                if (secretCode.charAt(i) == userAnswerStr.charAt(j) && j != i) {
                     cows++;
                 }
             }
         }
+
+        // grade the guessing attempt in bulls and cows.
         String grade = "";
         if (bulls > 0 && cows >0) {
             grade = bulls + " bull(s) and " + cows + " cow(s).";
@@ -81,6 +102,12 @@ public class Main {
         } else if (bulls > 0 && cows == 0) {
             grade = bulls + " bull(s).";
         }
-        System.out.println("Grade: " + grade + " The secret code is " + secretCodeStr + ".");
+
+        System.out.println("Grade: " + grade);
+        if (bulls == secretCode.length()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
