@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="11">
+      <module name="Bulls_and_Cows-task_main" target="11" />
+      <module name="Bulls_and_Cows-task_test" target="11" />
+      <module name="Problems-Accounts_main" target="11" />
+      <module name="Problems-Accounts_test" target="11" />
+      <module name="Problems-Army_main" target="11" />
+      <module name="Problems-Army_test" target="11" />
+      <module name="Problems-Books_main" target="11" />
+      <module name="Problems-Books_test" target="11" />
+      <module name="Problems-Calculating_factorials_main" target="11" />
+      <module name="Problems-Calculating_factorials_test" target="11" />
+      <module name="Problems-Calculator_with_four_methods_main" target="11" />
+      <module name="Problems-Calculator_with_four_methods_test" target="11" />
+      <module name="Problems-Complex_numbers_main" target="11" />
+      <module name="Problems-Complex_numbers_test" target="11" />
+      <module name="Problems-Create_a_full_name_main" target="11" />
+      <module name="Problems-Create_a_full_name_test" target="11" />
+      <module name="Problems-Decompose_a_math_function_main" target="11" />
+      <module name="Problems-Decompose_a_math_function_test" target="11" />
+      <module name="Problems-Division_main" target="11" />
+      <module name="Problems-Division_test" target="11" />
+      <module name="Problems-Find_the_max_of_three_numbers_main" target="11" />
+      <module name="Problems-Find_the_max_of_three_numbers_test" target="11" />
+      <module name="Problems-Fixing_the_main_method__1__main" target="11" />
+      <module name="Problems-Fixing_the_main_method__1__test" target="11" />
+      <module name="Problems-Fixing_the_main_method_main" target="11" />
+      <module name="Problems-Fixing_the_main_method_test" target="11" />
+      <module name="Problems-Inner_boxes_main" target="11" />
+      <module name="Problems-Inner_boxes_test" target="11" />
+      <module name="Problems-Parse_url_main" target="11" />
+      <module name="Problems-Parse_url_test" target="11" />
+      <module name="Problems-Points_on_the_2D_plane_main" target="11" />
+      <module name="Problems-Points_on_the_2D_plane_test" target="11" />
+      <module name="Problems-Preparing_full_name_main" target="11" />
+      <module name="Problems-Preparing_full_name_test" target="11" />
+      <module name="Problems-Print__Hello,_Java!_main" target="11" />
+      <module name="Problems-Print__Hello,_Java!_test" target="11" />
+      <module name="Problems-Print__We_are_robots!_main" target="11" />
+      <module name="Problems-Print__We_are_robots!_test" target="11" />
+      <module name="Problems-Raise_to_the_power_main" target="11" />
+      <module name="Problems-Raise_to_the_power_test" target="11" />
+      <module name="Problems-Representing_time_as_a_class_main" target="11" />
+      <module name="Problems-Representing_time_as_a_class_test" target="11" />
+      <module name="Problems-Sum_of_numbers_in_the_range_main" target="11" />
+      <module name="Problems-Sum_of_numbers_in_the_range_test" target="11" />
+      <module name="Problems-The_lucky_ticket_main" target="11" />
+      <module name="Problems-The_lucky_ticket_test" target="11" />
+      <module name="Problems-The_percentage_of_G_and_C_characters_main" target="11" />
+      <module name="Problems-The_percentage_of_G_and_C_characters_test" target="11" />
+      <module name="Problems-The_sign_of_a_number_main" target="11" />
+      <module name="Problems-The_sign_of_a_number_test" target="11" />
+      <module name="Problems-Vowel_or_not_main" target="11" />
+      <module name="Problems-Vowel_or_not_test" target="11" />
+      <module name="util_main" target="11" />
+      <module name="util_test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
