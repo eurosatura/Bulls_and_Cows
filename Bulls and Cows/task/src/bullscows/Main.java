@@ -1,4 +1,5 @@
 package bullscows;
+import java.util.Random;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -29,10 +30,26 @@ public class Main {
         }
         System.out.println("Congratulations! You guessed the secret code.");
 
-
     }
 
     public static String generateSecretCode (int length) {
+        StringBuilder code = new StringBuilder();
+
+        Random random = new Random();
+
+            for (int i = 0; i < length; i++) {
+                do {
+                        int digit = random.nextInt(9);
+                        if (!code.toString().contains(Integer.toString(digit))) {
+                            code.append(digit);
+                        }
+                    } while (code.length() == i);
+            }
+
+        return code.toString();
+    }
+
+    public static String generateSecretCodeOld (int length) {
 
         StringBuilder code = new StringBuilder();
         while (code.length() < length) {
@@ -104,10 +121,6 @@ public class Main {
         }
 
         System.out.println("Grade: " + grade);
-        if (bulls == secretCode.length()) {
-            return true;
-        } else {
-            return false;
-        }
+        return bulls == secretCode.length();
     }
 }
