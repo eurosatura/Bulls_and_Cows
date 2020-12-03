@@ -10,9 +10,34 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input the length of the secret code:");
-        int length = scanner.nextInt();
+        String input = scanner.nextLine();
+        int length = 0;
+        if ((!input.matches("\\d+"))) {
+            System.out.println("Error: \"" + input + "\" isn't a valid number.");
+            return;
+        } else if (Integer.parseInt(input) == 0) {
+            System.out.println("Error! bound must be positive");
+            return;
+        } else {
+            length = Integer.parseInt(input);
+        }
+
         System.out.println("Input the number of possible symbols in the code:");
-        int symbols = scanner.nextInt();
+        int symbols = 0;
+        input = scanner.nextLine();
+        if ((!input.matches("\\d+"))) {
+            System.out.println("Error: \"" + input + "\" isn't a valid number.");
+            return;
+        } else if (Integer.parseInt(input) < length) {
+            System.out.println("Error: it's not possible to generate a code with a length of " + length + " with " + input + " unique symbols.");
+            return;
+        } else if (Integer.parseInt(input) > 36) {
+            System.out.println("Error: maximum number of possible symbols in the code is 36 (0-9, a-z).");
+            return;
+        } else {
+            symbols = Integer.parseInt(input);
+        }
+
         generateStars(length, symbols);
         String secretCode = generateSecretCode(length, symbols);
         System.out.println("Okay, let's start a game!");
